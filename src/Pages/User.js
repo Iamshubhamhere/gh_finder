@@ -66,7 +66,7 @@ const User = () => {
           <div className="repo" key={repo.id}>
             <div>
               <h3>{repo.name}</h3>
-              <p>{repo.description}</p>
+              <p>{(repo.description)? repo.description: "No Description found"}</p>
             </div>
             <div className="updation">
               Updated on {new Date(repo.updated_at).toLocaleDateString('en-US', 

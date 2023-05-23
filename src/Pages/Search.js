@@ -28,6 +28,7 @@ const Search = () => {
           name='input'
           value={username}
           onChange={handleInputChange}
+          autoComplete='off'
         />
         <input type="submit" value="Search"/>
       </form>
