@@ -4,34 +4,33 @@ import axios from 'axios';
 
 const User = () => {
   const { username } = useParams();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState([]);
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
 
     const getUser = async () => {
       try {
-        const response = await axios.get(`https://api.github.com/users/${username}`, {
-        });
+        const response = await axios.get(`https://api.github.com/users/${username}`);
         setUser(response.data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
 
     const getRepos = async () => {
       try {
-        const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
-        });
+        const response = await axios.get(`https://api.github.com/users/${username}/repos`);
         setRepos(response.data);
+        console.log(response.data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
 
     getUser();
     getRepos();
-  }, [username]);
+  } ,[]);
 
   if (!user) {
     return <div>Loading...</div>;

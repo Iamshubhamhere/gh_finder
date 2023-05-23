@@ -9,8 +9,8 @@ function App() {
   return (
       <div className="container">
         <Routes>
-          <Route path="gh_finder/" element={<Search />} />
-          <Route path="gh_finder/user/:username" element={<User />} />
+          <Route path="/" element={<Search />} />
+          <Route path="/user/:username" element={<User />} />
         </Routes>
       </div>
   );
