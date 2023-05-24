@@ -175,3 +175,21 @@ h3 {
     color: var(--app-blue);
     font-size: 1.3rem;
 }
+
+input[type=button]{
+    padding:5px;
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50px;
+    color: var(--app-lightBlue);;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+}

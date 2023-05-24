@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 const User = () => {
   const { username } = useParams();
   const [user, setUser] = useState([]);
   const [repos, setRepos] = useState([]);
+  const Navigate = useNavigate();
+  const backToHome = () => {
+    Navigate('./gh_finder');
+  }
 
   useEffect(() => {
 
@@ -38,6 +42,7 @@ const User = () => {
 
   return (
     <div>
+      <input type='button' className='home' onClick={backToHome} value='Home' ></input>
        <div className='info'>
         <img src={user.avatar_url} alt={user.name} />
         <h1>{user.name}</h1>
@@ -74,6 +79,7 @@ const User = () => {
             </div>
         </div>
       ))}
+      
     </div>
     </div>
   );
